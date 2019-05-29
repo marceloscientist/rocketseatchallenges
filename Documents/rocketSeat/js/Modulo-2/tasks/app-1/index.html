@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    #boxes {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        float: left;
+    }
+
+    button {
+        height: 20px;
+        width: 100px;
+        position: absolute;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        left: 50%;
+        top: 50%;
+
+    }
+</style>
+
+<body>
+    <div id="app">
+        <button onclick="criaQuadradoVermelho()">Create a box</button>
+        <div id="container"></div>
+    </div>
+    <script>
+        //        var attribute = document.createAttribute("boxes");
+        var container = document.querySelector('#container');
+        function criaQuadradoVermelho() {
+            var div = document.createElement('div');
+            div.setAttribute('id', 'boxes');
+            container.appendChild(div);
+        }
+    </script>
+</body>
+
+</html>
