@@ -6,22 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/styles.css">
 </head>
-<style>
-</style>
 
 <body>
     <div id="app">
-        <button onclick="criaQuadradoVermelho()">Create a box</button>
-        <div id="container"></div>
+        <input type="text" name="nome" id="nome">
+        <button class="botao">Me pressione</button>
     </div>
-    <script src="./js/main.js">
-/**
-Utilizando o resultado do primeiro desafio, toda vez que o usuário passar o mouse por cima 
-de algum quadrado troque sua cor para uma cor aleatória gerada pela função abaixo:
+    <script>
+        var btnElement = document.querySelector("button.botao");
+        var inputElement = document.querySelector("input[name=nome]");
 
-*/
+        btnElement.onclick = function () {
+            var text = inputElement.value;
+            console.log("Teste : "+ text);
+        }
+
     </script>
 </body>
 
