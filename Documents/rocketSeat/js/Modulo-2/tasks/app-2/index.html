@@ -7,21 +7,70 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+<style>
+    body {
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        margin-left: 0px;
+    }
+
+    .boxes {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        float: left;
+    }
+
+    button {
+        height: 20px;
+        width: 100px;
+        position: absolute;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        left: 50%;
+        top: 50%;
+
+    }
+</style>
 
 <body>
     <div id="app">
-        <input type="text" name="nome" id="nome">
-        <button class="botao">Me pressione</button>
+        <button onclick="createMetamorBox()">Create a box</button>
+        <div id="container"></div>
     </div>
-    <script>
-        var btnElement = document.querySelector("button.botao");
-        var inputElement = document.querySelector("input[name=nome]");
+    <script>  
 
-        btnElement.onclick = function () {
-            var text = inputElement.value;
-            console.log("Teste : "+ text);
+    // https://stackoverflow.com/questions/15295381/javascript-change-element-background     
+
+
+    
+        var container = document.querySelector('#container');
+
+        /* Why not SET onmouseover handle function on the box creation */
+        function createMetamorBox() {
+
+            var box = document.createElement('div');
+            box.setAttribute('class', 'boxes');
+
+            // Calling the Random Coloring 
+            var newColor = getRandomColor(); // #E943F0
+
+            // Setting onmouseover to set background Attribute
+            box.onmouseover = function () {
+               box.setAttribute("style", "background-color: "+newColor)   
+            } 
+            container.appendChild(box);
         }
 
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
     </script>
 </body>
 
